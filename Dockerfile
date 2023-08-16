@@ -1,8 +1,10 @@
 FROM node:18
-WORKDIR /usr/src/app
+WORKDIR /app
+COPY package*.json /app
 
 RUN npm install
 
-COPY . .
+COPY . /app
+
 EXPOSE 3000
 CMD [ "node","app.js" ]
